@@ -282,19 +282,23 @@
 }
 
 .quick-link-button {
-  text-decoration: none;
-  padding: 10px 15px;
-  background-color: #d9ff00;
-  color: white;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-  white-space: nowrap;
+      padding: 0.67rem 1rem;
+      font-weight: 500;
+      border: 1px solid purple;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #f9f9f9;
+      transition: color 0.1s;
+    }
+
+a.quick-link-button:link,
+a.quick-link-button:visited {
+  color: black;
 }
 
-.quick-link-button:hover {
-  background-color: #b30000;
+a.quick-link-button:hover {
   color: white;
+  background-color: purple;
 }
 </style>
 
