@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finder Tool – Info Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #f1f1f1;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🦜 Finder Tool</h1>
+        <p>Search, merge, and download ecological & biological datasets in one place.</p>
+    </header>
+    <main>
+        <div class="section">
+            <h2>What is the Finder?</h2>
+            <p>
+                The Finder is a data retrieval tool that integrates multiple ecological and biological datasets
+                into a single interface. You can search by species name, category, or ID, and download the matching
+                data as an Excel file.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>How It Works</h2>
+            <ul>
+                <li><strong>Search by Species Name:</strong> Enter a full or partial species name, or a broader category like a genus, family, or "ALL DATA".</li>
+                <li><strong>Search by ID:</strong> Toggle “Search by ID” to enter known <code>Binary_ID</code> or <code>Species_ID</code> values.</li>
+                <li><strong>Trait Selection:</strong> Required traits are always included. You can also choose optional traits from the list.</li>
+                <li><strong>Merging Type:</strong>
+                    <ul>
+                        <li><em>Merged Columns</em> – combines equivalent traits from different datasets into single columns.</li>
+                        <li><em>Unmerged Columns</em> – keeps traits from each dataset separate.</li>
+                    </ul>
+                </li>
+                <li><strong>Advanced Mode:</strong> Allows adjusting fuzzy matching threshold for partial matches.</li>
+                <li><strong>Test Mode:</strong> Compare generated results against a reference Excel file to get similarity and quality scores.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Outputs</h2>
+            <p>
+                The Finder returns results in Excel format. Depending on your selection, the file may contain:
+            </p>
+            <ul>
+                <li>Required metadata: <code>Source</code>, <code>species</code>, <code>common_name</code>, <code>family</code>, <code>order</code>, <code>genus</code></li>
+                <li>Optional traits selected by the user</li>
+                <li>Resolution errors (if any) in a separate downloadable file</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Tips for Best Results</h2>
+            <ul>
+                <li>Use scientific species names for the most accurate matches.</li>
+                <li>When using fuzzy matching, lower thresholds will return more potential matches but may include false positives.</li>
+                <li>If searching large datasets, try narrowing down traits to reduce file size.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Example Searches</h2>
+            <ul>
+                <li><strong>Species Name:</strong> <code>Corvus corax</code> → returns data for the common raven.</li>
+                <li><strong>Category:</strong> <code>Passeriformes</code> → returns all passerine birds.</li>
+                <li><strong>ID Search:</strong> Binary_ID = <code>150914.0saxspa1</code></li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        &copy; 2025 COSSEE Lab. Created by <a href="https://www.linkedin.com/in/bhavya-jain-b42618237/" target="_blank" rel="noopener">Bhavya Jain</a>.
+    </footer>
+</body>
+</html>
