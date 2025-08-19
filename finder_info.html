@@ -49,63 +49,185 @@
         <h1>🦜 Finder Information</h1>
         <p>Search, merge, and download ecological & biological datasets in one place.</p>
     </header>
-    <main>
-        <div class="section">
-            <h2>What is the Finder?</h2>
-            <p>
-                The Finder is a data retrieval tool that integrates multiple ecological and biological datasets
-                into a single interface. You can search by species name, category, or ID, and download the matching
-                data as an Excel file.
-            </p>
-        </div>
+<div class="section">
+  <main>
+  <h2>Abstract</h2>
+  <p>
+    The Finder is a specialized tool designed to streamline searching, organizing, and analyzing bird datasets across multiple integrated sources. 
+    It provides users with the ability to navigate bird data through an intuitive interface featuring dedicated buttons, search functions, and advanced configuration options. 
+    This paper presents a comprehensive study of the Finder, explaining how it works, what each button does, both in the frontend and backend and how users can effectively apply its features.
+  </p>
 
-        <div class="section">
-            <h2>How It Works</h2>
-            <ul>
-                <li><strong>Search by Species Name:</strong> Enter a full or partial species name, or a broader category like a genus, family, or "ALL DATA".</li>
-                <li><strong>Search by ID:</strong> Toggle “Search by ID” to enter known <code>Binary_ID</code> or <code>Species_ID</code> values.</li>
-                <li><strong>Trait Selection:</strong> Required traits are always included. You can also choose optional traits from the list.</li>
-                <li><strong>Merging Type:</strong>
-                    <ul>
-                        <li><em>Merged Columns</em> – combines equivalent traits from different datasets into single columns.</li>
-                        <li><em>Unmerged Columns</em> – keeps traits from each dataset separate.</li>
-                    </ul>
-                </li>
-                <li><strong>Advanced Mode:</strong> Allows adjusting fuzzy matching threshold for partial matches.</li>
-                <li><strong>Test Mode:</strong> Compare generated results against a reference Excel file to get similarity and quality scores.</li>
-            </ul>
-        </div>
+  <h2>1. Introduction</h2>
+  <p>
+    Modern research, like meta-analysis of bird data, often requires combining datasets from multiple sources, a process that risks redundancy and inconsistency. 
+    The Finder is designed to unify searches across datasets, reduce redundancy in retrieved results, and provide flexible user interaction. 
+    Its user interface is button-driven, allowing users to quickly switch between operational modes, configure merged or unmerged datasets, and tailor outputs to their research needs. 
+    This paper describes the Finder’s architecture, its modes of operation, and the role of each button on its interface.
+  </p>
 
-        <div class="section">
-            <h2>Outputs</h2>
-            <p>
-                The Finder returns results in Excel format. Depending on your selection, the file may contain:
-            </p>
-            <ul>
-                <li>Required metadata: <code>Source</code>, <code>species</code>, <code>common_name</code>, <code>family</code>, <code>order</code>, <code>genus</code></li>
-                <li>Optional traits selected by the user</li>
-                <li>Resolution errors (if any) in a separate downloadable file</li>
-            </ul>
-        </div>
+  <h2>2. System Overview</h2>
+  <p>
+    The Finder is a data retrieval tool that integrates multiple bird datasets into a single searchable platform, allowing you to search, merge, and download species level data in one place. 
+    You can search by species name (full or partial), by broader category (e.g., genus or family), or via the Search by ID toggle to query by Binary_ID or Species_ID. 
+    Results are returned as an Excel file that includes required metadata (Source, species, common_name, family, order, genus) and any optional traits you selected; 
+    if you’ve selected the advanced mode, you can also download a separate file of resolution errors. 
+    In addition to exact-string lookups, Finder supports fuzzy matching (threshold adjustable) to accommodate partial or imperfect names. 
+  </p>
+  <p>
+    Four output organizations are available: 
+  </p>
+  <ul>
+    <li><b>Merged Columns + Advanced Mode:</b> equivalent traits across datasets are unified into single columns and different values from different datasets are pruned into one value.</li>
+    <li><b>Merged Columns Only:</b> equivalent traits across datasets are unified into single columns.</li>
+    <li><b>Unmerged Columns + Advanced Mode:</b> traits from each dataset are kept separate but different values from different datasets are pruned into one value.</li>
+    <li><b>Unmerged Columns Only:</b> traits from each dataset are kept separate.</li>
+  </ul>
+  <p>File names clearly indicate whether the output is merged or unmerged, aiding downstream organization and sharing.</p>
+  <img src="web_files/setup.jpg" width="900px">
 
-        <div class="section">
-            <h2>Tips for Best Results</h2>
-            <ul>
-                <li>Use scientific species names for the most accurate matches.</li>
-                <li>When using fuzzy matching, lower thresholds will return more potential matches but may include false positives.</li>
-                <li>If searching large datasets, try narrowing down traits to reduce file size.</li>
-            </ul>
-        </div>
+  <h2>3. User Interface and Button Functions</h2>
+  
+  <h3>3.1 Search Field + Search Button</h3>
+  <ul>
+    <li>Enter a species (e.g., Corvus corax), a partial string, or a broader category (genus/family).</li>
+    <li>Click Search to generate an Excel result with required metadata and selected traits.</li>
+    <li>With Merged Columns, conceptually similar traits are unified; with Unmerged Columns, dataset specific columns are preserved.</li>
+  </ul>
+  <img src="web_files/download.jpg" width="900px">
 
-        <div class="section">
-            <h2>Example Searches</h2>
-            <ul>
-                <li><strong>Species Name:</strong> <code>Corvus corax</code> → returns data for the common raven.</li>
-                <li><strong>Category:</strong> <code>Passeriformes</code> → returns all passerine birds.</li>
-                <li><strong>ID Search:</strong> Binary_ID = <code>150914.0saxspa1</code></li>
-            </ul>
-        </div>
+  <h3>3.2 Search by ID Toggle</h3>
+  <ul>
+    <li>Enable Search by ID to switch the form from name input to ID type (Binary_ID or Species_ID) + ID value input.</li>
+    <li>On submit, the app looks up the ID in a master reference DataFrame, retrieves the scientific name, and then fetches traits using the same backend functions used for name queries (merged: get_bird_data_sync, unmerged: get_bird_data_sync2). This keeps the internals consistent while letting users choose names or canonical IDs.</li>
+    <li>Multiple IDs separated by commas are supported; matched outputs are concatenated into one Excel file.</li>
+  </ul>
+  <img src="web_files/ID.jpg" width="900px">
+
+  <h3>3.3 Trait Selection (Required + Optional)</h3>
+  <ul>
+    <li>Required metadata—Source, species, common_name, family, order, genus—are always included and shown as disabled checkboxes.</li>
+    <li>Optional traits are selected via a multiselect widget. The UI preserves valid selections across mode changes and filters defaults to avoid invalid combinations. Under the hood, a metadata mapping dictionary links internal column names to displayed labels and trait groups, keeping the system scalable as datasets grow.</li>
+  </ul>
+
+  <h3>3.4 Merging Type (Merged vs. Unmerged)</h3>
+  <ul>
+    <li><b>Merged Columns:</b> consolidates equivalent traits from different sources into one column per trait.</li>
+    <li><b>Unmerged Columns:</b> shows each dataset’s columns separately, preserving provenance.</li>
+    <li>Trait lists and defaults adapt to the selected mode; the filename embeds the chosen mode for clarity.</li>
+  </ul>
+
+  <h3>3.5 Advanced Mode and the Fuzzy Matching Threshold</h3>
+  <p>
+    Enabling the Advanced Mode merges the data from different sources for the same species in one row. 
+    If there are different values in different data sources, the median is taken if the number of different values across sources is odd; 
+    if it’s even, the closest value to the mean among the middle two values is taken. Advanced mode further consolidates results over merged data. 
+    This gives users 4 options:
+  </p>
+  <img src="web_files/advanced.jpg" width="900px">
+
+  <ul>
+    <li>Merged + Advanced mode: Both row and column wise merging and pruning</li>
+    <li>Merged Only: Only column wise merging and pruning</li>
+    <li>Unmerged + Advanced mode: Only row wise merging and pruning</li>
+    <li>Unmerged Only: No merging and pruning</li>
+  </ul>
+  <p>
+    Under Advanced Mode you can find the fuzzy matching threshold slider (initial default ~85%) so you can tune partial match sensitivity. 
+    Lower thresholds return more candidates (and potentially more false positives); higher thresholds are stricter. 
+    The threshold is stored in app state for consistent behavior across the session. 
+    Note: You do not need to enable advanced mode to change the fuzzy matching threshold.
+  </p>
+
+  <h3>3.6 Download Resolution Errors (in Advanced Mode)</h3>
+  <p>
+    If advanced mode is enabled, you will also get a downloadable Resolution Errors file which shows the RMS Error of the values that were pruned in comparison to the chosen value. 
+    This supports auditability and improves advanced mode transparency.
+  </p>
+
+  <h3>3.7 Test Mode (Verification & Diagnostics)</h3>
+  <ul>
+    <li>Toggle Enable Test Mode to upload a reference Excel file; when you run a search, Finder compares your generated output to the reference and returns two metrics:
+      <ul>
+        <li>Similarity Score (string level similarity across common columns)</li>
+        <li>Post processing Score (deductions for duplicates, missing species, unsorted species, or missing key columns).</li>
+      </ul>
+    </li>
+    <li>The penalties are deliberately chosen (−22, −24, −26, −27) so that any combination maps uniquely to the failing checks.</li>
+    <li>Test Mode catches issues early while preserving all normal features (e.g., threshold slider, references, resolution error download).</li>
+  </ul>
+  <img src="web_files/Test.jpg" width="900px">
+
+  <h3>3.8 Download Results (Excel)</h3>
+  <p>The main Download button writes your selections to Excel and embeds the mode (“merged”/“unmerged”) in the filename.</p>
+
+  <h2>4. Workflow Examples & Practical Tips</h2>
+  
+  <h3>4.1 Species Name Search</h3>
+  <ol>
+    <li>Enter “Corvus corax” and click Search.</li>
+    <li>Select optional traits (e.g., mass_g) and choose Merged or Unmerged.</li>
+    <li>If you expect minor spelling or taxonomic variations, lower the fuzzy threshold slightly to broaden matches.</li>
+    <li>Enable advanced mode if you also want row wise merging and pruning as described in Section 3.5.</li>
+  </ol>
+
+  <h3>4.2 Category Search (Genus/Family/ALL DATA)</h3>
+  <ol>
+    <li>Enter a genus (e.g., Corvus) or a family (e.g., Passeriformes) and run Search to return all matching taxa.</li>
+    <li>For very broad pulls (e.g., “ALL DATA”), consider trimming optional traits to keep file sizes manageable.</li>
+  </ol>
+
+  <h3>4.3 ID Search</h3>
+  <ol>
+    <li>Toggle Search by ID, choose Binary_ID (or Species_ID), paste an ID such as 150914.0saxspa1 (example), and run Search.</li>
+    <li>Finder resolves the species via the master reference and retrieves traits through the same backend pipeline used for name queries, ensuring identical behavior across modes.</li>
+  </ol>
+
+  <h3>4.4 Test Mode for Validation</h3>
+  <ol>
+    <li>Enable Test Mode and upload your reference Excel.</li>
+    <li>Run the same query; review the Similarity and Post processing scores. Unique penalty sums help pinpoint what failed (e.g., sorting vs. missing key columns).</li>
+  </ol>
+
+  <h3>Practical Tips</h3>
+  <ul>
+    <li>Prefer scientific names for the most accurate matches.</li>
+    <li>With fuzzy matching, lower thresholds return more candidates but can add false positives; raise the threshold to be strict.</li>
+    <li>On very large pulls (families or “ALL DATA”), narrow optional traits to reduce file size and download time.</li>
+    <li>For high throughput or precise lookups, use Binary_ID/Species_ID.</li>
+  </ul>
+
+  <h2>5. Strengths, Limitations, and Current Caveats</h2>
+
+  <h3>Strengths</h3>
+  <ul>
+    <li>Flexible search: names, categories, and canonical IDs (Binary_ID/Species_ID) lead to the same, consistent retrieval pipeline.</li>
+    <li>Four output organizations:
+      <ul>
+        <li>Merged + Advanced mode: Both row and column wise merging and pruning</li>
+        <li>Merged Only: Only column wise merging and pruning</li>
+        <li>Unmerged + Advanced mode: Only row wise merging and pruning</li>
+        <li>Unmerged Only: No merging and pruning</li>
+      </ul>
+    </li>
+    <li>Transparent quality control: Test Mode with a similarity metric and structured post processing checks enables rapid, reproducible verification.</li>
+    <li>Auditability: optional resolution error Excel captures how conflicts were resolved in the Advanced Mode.</li>
+    <li>Scalable trait UI: required traits are enforced; optional traits are curated via a multiselect backed by a metadata mapping dictionary.</li>
+  </ul>
+
+  <h3>Limitations & Caveats</h3>
+  <ul>
+    <li>Fuzzy matching trade off: Lower thresholds increase recall but also false positives; tune the slider to your tolerance.</li>
+    <li>Historical bugs: earlier issues with unmerged mode (index/shape mismatches, default trait validity, etc.) were identified and addressed; ongoing testing aims to keep both modes uniform and stable.</li>
+  </ul>
+
+  <h2>6. Conclusion</h2>
+  <p>
+    The Finder consolidates ecological and biological trait discovery into a single, reproducible workflow: search by name, category, or ID; customize traits; choose merged or unmerged outputs; validate results with Test Mode; and, when applicable, audit conflict handling via the resolution errors export. 
+    This combination of flexible inputs, explicit metadata requirements, and built in quality checks makes Finder a dependable bridge between heterogeneous datasets and analysis ready tables—equally useful for quick, single species lookups and for broad, taxon wide pulls destined for meta analysis.
+  </p>
     </main>
+    </div>
     <footer>
         &copy; 2025 COSSEE Lab. Created by <a href="https://www.linkedin.com/in/bhavya-jain-b42618237/" target="_blank" rel="noopener">Bhavya Jain</a>.
     </footer>
