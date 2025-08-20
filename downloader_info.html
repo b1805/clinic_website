@@ -53,38 +53,73 @@
         <div class="section">
             <h2>What is the Downloader?</h2>
             <p>
-                The Downloader is a 
+                The Downloader is designed to automate the retrieval of supplementary files, research papers, and associated datasets from academic articles. It takes in a list of DOIs in CSV/Excel/Sheets format, systematically searches for supplementary materials across publishers and repositories, and organizes them into a structured, downloadable format. 
             </p>
         </div>
 
         <div class="section">
             <h2>How It Works</h2>
             <ul>
-                
+                <li>Input Stage</li>
+                <ul>
+                    <li>Upload a CSV or Excel or Sheets file containing DOIs (e.g., paper_list.csv).</li>
+                    <li>The Downloader scans all columns, extracting DOIs using regex and filtering out everything else.</li>
+                </ul>
+                <li>Retrieval Pipeline</li>
+                <ul>
+                    <li>Primary Method: Visits the DOI landing page, parses HTML, and searches for supplementary file links using keyword filters like “supplementary,” “dataset,” “S1,” etc.</li>
+                    <li>Fallback APIs:</li>
+                    <ul>
+                        <li>EuropePMC API – checks metadata and supplementary links.</li>
+                        <li>Crossref API – retrieves metadata for associated datasets.</li>
+                    </ul>
+                    <li>Domain-specific logic: Custom parsers handle publisher idiosyncrasies (e.g., Springer, Elsevier, Wiley). For Wiley in particular, automated API access is limited, so Selenium and API tokens are used, when possible, with manual fallback when necessary.</li>
+                </ul>
+                <li>Download & Packaging</li>
+                <ul>
+                    <li>Files are streamed into temporary directories and checked to ensure they are not HTML pages mislabeled as datasets.</li>
+                    <li>After collection, files are zipped together for clean download.</li>
+                    <li>Logs are generated to track which DOIs succeeded, failed, or lacked supplementary content.</li>
+                </ul>
+                <li>Papers Only Mode</li>
+                <ul>
+                    <li>A separate option allows you to download the paper PDF itself (currently via Wiley API integration).</li>
+                </ul>
             </ul>
         </div>
 
         <div class="section">
             <h2>Outputs</h2>
             <p>
-                The Downloader returns results in format. Depending on your selection, the file may contain:
+                The Downloader returns results in ZIP archives and CSV logs. Depending on your run, the outputs may contain:
+                <ul>
+                    <li>Supplementary datasets (CSV, XLSX, ZIP, etc.)</li>
+                    <li>Paper PDFs (when using “Download Papers Only” mode)</li>
+                    <li>Organized folder structure: each paper has its own folder, named by DOI and a cleaned paper title</li>
+                    <li>A log file (CSV) recording the status of every DOI (success, missing supplements, failed retrieval, etc.)</li>
+                </ul>
             </p>
-            <ul>
-
-            </ul>
         </div>
 
         <div class="section">
             <h2>Tips for Best Results</h2>
             <ul>
-                
+                <li>Be aware that some publishers (especially Wiley) restrict access to supplementary materials.</li>
+                <li>If retrieving broad sets of papers, expect variability: some papers have no supplements, others require manual downloads.</li>
             </ul>
         </div>
 
         <div class="section">
             <h2>Example </h2>
             <ul>
-                
+                <li>Input: paper_list.csv containing 100 DOIs.</li>
+                <li>Process: Downloader scans each DOI → finds 65 papers with supplementary files, 20 with papers only, 15 with no downloadable data.</li>
+                <li>Output:</li>
+                <ul>
+                    <li>supplementary_data.zip → structured archive with per-paper folders (DOI_paperTitle/) containing CSVs, Excel, or ZIP files.</li>
+                    <li>download_log.csv → status file summarizing each DOI’s outcome.</li>
+                    <li>If “Download Papers Only” mode was used afterwards: PDF copies of each paper </li>
+                </ul>
             </ul>
         </div>
     </main>
