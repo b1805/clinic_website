@@ -85,6 +85,10 @@
                 <ul>
                     <li>A separate option allows you to download the paper PDF itself (currently via Wiley API integration).</li>
                 </ul>
+                <li>Separate Datasets Mode</li>
+                <ul>
+                    <li>An optional setting that, when enabled, separates supplementary materials into two distinct archives. The Downloader inspects each file: if it is a structured dataset (e.g., CSV, TSV, Excel, ODS, or compressed archives containing these or has a keyword that suggests that it is a dataset), it is placed into datasets.zip. All other supplementary materials (figures, scripts, notes, PDFs, etc.) go into supplementary_data.zip. This lets users extract datasets from the DOIs separate from all other supplementary files.</li>
+                </ul>
             </ul>
         </div>
 
@@ -118,7 +122,8 @@
                 <ul>
                     <li>supplementary_data.zip → structured archive with per-paper folders (DOI_paperTitle/) containing CSVs, Excel, or ZIP files.</li>
                     <li>download_log.csv → status file summarizing each DOI’s outcome.</li>
-                    <li>If “Download Papers Only” mode was used afterwards: PDF copies of each paper </li>
+                    <li>If "Separate Datasets Mode" was enabled: extracts datasets from the DOIs separate from all other supplementary files.</li>
+                    <li>If “Download Papers Only” mode was used afterwards: PDF copies of each paper.</li>
                 </ul>
             </ul>
         </div>
