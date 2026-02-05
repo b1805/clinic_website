@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <title>Blog – COSSEE Lab</title>
+  <link rel="icon" href="web_files/photo-1627704671340-0969d7dba-h_ma49xzt0.jpg" type="image/jpg">
+  <link rel="stylesheet" href="css/style1.css" />
+  <link rel="stylesheet" href="css/style2.css" />
+  <link rel="stylesheet" href="css/style3.css" />
+  <link rel="stylesheet" href="css/style4.css" />
+  <link rel="stylesheet" href="css/style5.css" />
+  <link rel="stylesheet" href="css/style6.css" />
+  <link rel="stylesheet" href="css/style7.css" />
+  <link rel="stylesheet" href="css/style8.css" />
+  <link rel="preload" href="css/style9.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/style10.css"></noscript>
+  <link rel="stylesheet" href="css/style11.css" />
+
+  <style>
+    .navbar-fixed-top {
+      top: auto;
+    }
+    
+    .navbar.opened {
+        z-index: 1032;
+    }
+    @-webkit-keyframes animationBanner { 0% { opacity: 0; top: -11rem; } 91% { opacity: 0; top: -11rem; } 100% { opacity: 1; top: 0; } }
+    @-moz-keyframes animationBanner { 0% { opacity: 0; top: -11rem; } 91% { opacity: 0; top: -11rem; } 100% { opacity: 1; top: 0; } }
+    @-o-keyframes animationBanner { 0% { opacity: 0; top: -11rem; } 91% { opacity: 0; top: -11rem; } 100% { opacity: 1; top: 0; } }
+       @keyframes animationBanner { 0% { opacity: 0; top: -11rem; } 91% { opacity: 0; top: -11rem; } 100% { opacity: 1; top: 0; } }
+    @-webkit-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 11rem; } }
+    @-moz-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 11rem; } }
+    @-o-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 11rem; } }
+       @keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 11rem; } }
+    
+    @-webkit-keyframes animationClosing { 0% { height: 11rem; opacity: 1; } 30% { height: 11rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+    @-moz-keyframes animationClosing { 0% { height: 11rem; opacity: 1; } 30% { height: 11rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+    @-o-keyframes animationClosing { 0% { height: 11rem; opacity: 1; } 30% { height: 11rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+    @keyframes animationClosing { 0% { height: 11rem; opacity: 1; } 30% { height: 11rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+    
+    @media(max-width: 575px) {
+    
+      @-webkit-keyframes animationBanner { 0% { opacity: 0; top: -14rem; } 91% { opacity: 0; top: -14rem; } 100% { opacity: 1; top: 0; } }
+      @-moz-keyframes animationBanner { 0% { opacity: 0; top: -14rem; } 91% { opacity: 0; top: -14rem; } 100% { opacity: 1; top: 0; } }
+      @-o-keyframes animationBanner { 0% { opacity: 0; top: -14rem; } 91% { opacity: 0; top: -14rem; } 100% { opacity: 1; top: 0; } }
+        @keyframes animationBanner { 0% { opacity: 0; top: -14rem; } 91% { opacity: 0; top: -14rem; } 100% { opacity: 1; top: 0; } }
+      @-webkit-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 14rem; } }
+      @-moz-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 14rem; } }
+      @-o-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 14rem; } }
+        @keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 14rem; } }
+    
+      @-webkit-keyframes animationClosing { 0% { height: 14rem; opacity: 1; } 30% { height: 14rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+      @-moz-keyframes animationClosing { 0% { height: 14rem; opacity: 1; } 30% { height: 14rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+      @-o-keyframes animationClosing { 0% { height: 14rem; opacity: 1; } 30% { height: 14rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+      @keyframes animationClosing { 0% { height: 14rem; opacity: 1; } 30% { height: 14rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+    }
+    .tab-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 7rem 1rem 4rem;
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: 2px solid #ccc;
+      justify-content: center;
+    }
+    .tab-button {
+      padding: 1rem;
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-size: 1rem;
+    }
+    .tab-button.active {
+      border-bottom: 3px solid #333;
+      font-weight: bold;
+    }
+    .tab-content {
+      display: none;
+      padding: 2rem 0;
+      text-align: center;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .person-card img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .person-card h4 {
+      margin-top: 1rem;
+      margin-bottom: 0.25rem;
+    }
+    .person-card p {
+      font-style: italic;
+      margin: 0;
+    }
+    .page-section {
+      padding: 7rem 1rem 4rem;
+    }
+    .content-col {
+      padding: 1rem;
+    }
+    .content-col h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .content-col ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .content-col img {
+      max-width: 100%;
+      margin: 1rem 0;
+    }
+    .content-col img {
+        display: inline-block;
+        margin: 1rem auto;
+        height: auto; /* let height be flexible unless specified */
+        width: auto;  /* let width be flexible unless specified */
+        max-width: 100%; /* still responsive */
+    }
+  </style>
+</head>
+<body>
+    <!-- NAV BAR -->
+
+    <section
+      data-bs-version="5.1"
+      class="menu menu2 cid-uJSrOkOEyE"
+      once="menu"
+      id="menu-5-uJSrOkOEyE"
+    >
+      <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+          <div class="navbar-brand">
+            <span class="navbar-logo">
+              <a href="index.html">
+                <img
+                  src="web_files/photo-1732881112067-aa3e9ece2-h_ma49wziz.jpg"
+                  alt=""
+                  style="height: 4.3rem"
+                />
+              </a>
+            </span>
+            <span class="navbar-caption-wrap">
+              <a
+                class="navbar-caption text-black display-4"
+                href="index.html"
+                autocomplete="off"
+              >
+                Home
+              </a>
+            </span>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-bs-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+              <li class="nav-item">
+                <a
+                  class="nav-link link text-black display-4"
+                  href="people.html"
+                >
+                  People
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link link text-black display-4"
+                  href="research.html"
+                  aria-expanded="false"
+                >
+                  Research
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link link text-black display-4"
+                  href="publications.html"
+                  aria-expanded="false"
+                  autocomplete="off"
+                >
+                  Publications
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link text-black display-4" href="blog.html">
+                  Blog
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-black display-4"
+                  href="#"
+                  id="openScienceDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Open Science
+                </a>
+                <div class="dropdown-menu" aria-labelledby="openScienceDropdown">
+                  <a class="dropdown-item" href="registrations.html">Registrations</a>
+                  <a class="dropdown-item" href="registered-reports.html">Registered Reports</a>
+                  <a class="dropdown-item" href="published-protocols.html">Published Protocols</a>
+                  <a class="dropdown-item" href="EDI.html">Equity, Diversity and Inclusion</a>
+                  <a class="dropdown-item" href="others.html">Others</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link link text-black display-4"
+                  href="opportunities.html"
+                  autocomplete="off"
+                >
+                  Opportunities
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link link text-black display-4"
+                  href="links.html"
+                  autocomplete="off"
+                >
+                  Links
+                </a>
+              </li>
+            </ul>
+
+            <div class="navbar-buttons mbr-section-btn">
+              <a
+                class="btn btn-primary display-4 glow-animation"
+                href="contact.html"
+                autocomplete="off"
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+  <!-- PAGE CONTENT -->
+  <section class="page-section">
+  <div class="container">
+    <h2 class="display-2 text-center mb-4"><strong>Zotero magic</strong></h2>
+    <p class="text-center mb-3"><em>By Szymek Drobinak – January 31, 2026</em></p>
+      <div class="blog-content">
+				<div class="paragraph"><br /><br />Here&rsquo;s how you usually use your reference manager.
+				<br />You begin with good intentions.
+				<br />The database feels clean.
+				<br />You save papers directly from journals, PDFs attach themselves automatically, and citations appear in Word or LaTeX like magic.
+				<br />For a while, everything works.
+				<br />Then the volume grows.
+				<br />&#8203;
+				<br />A few hundred papers become a few thousand. Some PDFs are called &ldquo;<em>fulltext.pd</em>f&rdquo;. Others are cryptic publisher strings. Metadata varies depending on the source of the item. You accidentally save the same paper twice &mdash; once from the journal site, once from Google Scholar, once as a preprint. Some books sit in Zotero&rsquo;s hidden storage, others in separate folders because you wanted to keep chapters together. 
+				You annotate on one device and later realise there&rsquo;s another version of the same PDF elsewhere.
+				<br />
+				<br />Nothing breaks dramatically. It just slowly degrades.
+				<br />
+				<br />Searching still works, but feels less reliable. Browsing becomes frustrating. You start vaguely remembering papers you can&rsquo;t quite locate anymore. The system accumulates content, but it&rsquo;s increasingly harder to browse. In my case, the progression looked a bit like that &ndash; until I discovered Zotero. The software had its ups and downs, but after some major redesigns and updates, it is now probably the best tool I have ever used to manage my article library.
+				<br />
+				<br />Rethinking the process did not mean just replacing a manager with Zotero, but building a pipeline around it that would enforce structure automatically. Here&rsquo;s how Zotero made my life &ndash; and research &ndash; more enjoyable.</div>
+				<br /><div class="paragraph"><strong style="color:rgb(42, 42, 42)">Centralising storage</strong>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">The first change was to move all attachments to a single, visible location.</span>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">By default, Zotero stores PDFs in an internal directory with randomly named folders. It&rsquo;s fine technically, but opaque. You don&rsquo;t really &ldquo;own&rdquo; your library in a transparent way. You have an option to use Zotero&rsquo;s cloud, but it quickly fills up and is pricey.</span>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">Instead, I configured Zotero to store all attachments in one Dropbox folder:</span>
+				<br /><em style="color:rgb(42, 42, 42)">Dropbox/Zotero_Library/</em>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">&#8203;This immediately gave several advantages:</span><ul style="color:rgb(42, 42, 42)"><li>all PDFs are human-accessible;</li><li>everything is backed up automatically;</li><li>synchronisation across devices is instant;</li><li>I&rsquo;m not locked into Zotero&rsquo;s hidden storage.</li></ul>
+				<br /><span style="color:rgb(42, 42, 42)">There are small subtleties that have to be adhered to &ndash; Zotero syncs its settings across your computers, so the location path is also synced &ndash; but of course, each of your Zotero instances will see it only if it&rsquo;s the same path. This may cause trouble when working on both macOS and Windows machines &ndash; their path formats differ. Even if you use just one OS, Dropbox usually sits in your home folder, which means its name 
+				(usually your username) has to be consistent across machines. On macOS, you can use symbolic links instead of paths so they always point to the correct folder across multiple machines. The only thing to remember are the key options Zotero names in a confusing way:</span><ul style="color:rgb(42, 42, 42)"><li>Zotero&rsquo;s Advanced settings &#61664;-&gt; Base Directory: this should be your cloud (e.g., Dropbox) folder where the PDFs live</li><li>Zotero&rsquo;s Advanced settings &#61664; -&gt; 
+				Zotero&rsquo;s Data directory: can be left default, it&rsquo;s just some internal Zotero data</li><li>Attanger&rsquo;s (see below) settings &#61664;-&gt; Destination Path root directory: should be the same as Zotero&rsquo;s Base Directory</li></ul><br /><span style="color:rgb(42, 42, 42)">Now Zotero acts as a database layer on top of a clean filesystem, rather than a container that hides everything. But this only works if files are named and organised properly. A single folder with thousands 
+				of random PDFs would be just as bad. This is where Attanger becomes essential.</span></div>  
+				<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center"> <a> <img src="web_files/1-zotero-basefolder-settings_orig.png" alt="Picture" style="width:auto;max-width:100%" /> </a> <div style="display:block;font-size:90%">Zotero - base folder settings</div> </div></div>
+				<div class="wsite-spacer" style="height:50px;"></div>  <div class="paragraph"><strong style="color:rgb(42, 42, 42)">Attanger: automatic naming and folder structure</strong>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">Attanger (https://github.com/MuiseDestiny/zotero-attanger) lets you define rules for how attachments are renamed and where they are stored, using Zotero metadata fields. Instead of keeping the publisher-provided filename, every PDF is renamed deterministically using the author's name, year, and title.</span><br /><br /><span style="color:rgb(42, 42, 42)">So instead of:</span>
+				<br /><em style="color:rgb(42, 42, 42)">1-s2.0-S0169534719301234-main.pdf</em>
+				<br /><span style="color:rgb(42, 42, 42)">you get:</span>
+				<br /><em style="color:rgb(42, 42, 42)">Nakagawa_2021_MetaAnalysisOfVariance.pdf</em>
+				<br /><span style="color:rgb(42, 42, 42)">or for multi-author papers:</span>
+				<br /><em style="color:rgb(42, 42, 42)">Drobniak_et_al_2022_EvolutionaryDynamicsOfVariance.pdf</em>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">For folder structure, I separate papers and books. Journal articles go into folders by journals and years:</span>
+				<br /><em style="color:rgb(42, 42, 42)">Papers/Journal1/2024/
+				<br />Papers/Journal1/2023/
+				<br />Papers/Journal2/2022/</em>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">Books go into topic-based folders. Here I use Zotero&rsquo;s &ldquo;Extra&rdquo; field as a control variable. For example, in the Extra field I might write:</span>
+				<br /><em style="color:rgb(42, 42, 42)">Statistics</em>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">Attanger reads that and automatically places the PDF in:</span>
+				<br /><em style="color:rgb(42, 42, 42)">Books/Statistics/</em>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">This gives a clean and flexible system:</span><ul style="color:rgb(42, 42, 42)"><li>papers are chronological;</li><li>books are thematic;</li><li>everything is automatic.</li></ul>
+				<br /><span style="color:rgb(42, 42, 42)">No dragging files around. No manual renaming. Import a PDF, and it ends up in the right place with the right name. Of course, the names can have a custom format &ndash; just design something using Attanger's field identifiers. For complex sorting (like my books), the folder definition string in Attanger can use more complex syntax with &ldquo;if&rdquo; conditional statements.</span></div>  
+				<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:right"> <a> <img src="web_files/2-attanger-root-folder-settings_orig.png" alt="Picture" style="width:auto;max-width:100%" /> </a> 
+				<div style="display:block;font-size:90%">Attanger root folder settings</div> </div></div>  
+				<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:right"> <a> <img src="web_files/3-example-attanger-folder-definition-conditional-statements.png?1770238037" alt="Picture" style="width:auto;max-width:100%" /> </a> 
+				<div style="display:block;font-size:90%">Example Attanger folder definition conditional statements</div> </div></div>  
+				<div class="wsite-spacer" style="height:50px;"></div>  
+				<div class="paragraph"><strong style="color:rgb(42, 42, 42)">DOI Manager</strong>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">Once files are stored cleanly, the next weak point is metadata&mdash;especially DOIs. In theory, every modern academic paper has a DOI. In practice, many Zotero entries are missing them or contain malformed ones, depending on how the paper was imported.</span>
+				<br /><span style="color:rgb(42, 42, 42)">This matters a lot more than it seems. The DOI is the unique identifier that allows Zotero to fetch authoritative metadata from CrossRef and other services. It&rsquo;s also the most reliable way to detect duplicates.</span><br /><span style="color:rgb(42, 42, 42)">The DOI Manager (</span><em style="color:rgb(42, 42, 42)"><a href="https://github.com/bwiernik/zotero-shortdoi" target="_blank">https://github.com/bwiernik/zotero-shortdoi</a></em>
+				<span style="color:rgb(42, 42, 42)">) plugin scans your library and:</span><ul style="color:rgb(42, 42, 42)"><li>finds missing DOIs;</li><li>validates existing ones;</li><li>corrects errors.</li></ul> <span style="color:rgb(42, 42, 42)">Running it periodically keeps the library's &ldquo;identity layer&rdquo; clean. Once DOIs are in place, Zotero can reliably refresh metadata for entries that were imported in messy ways. Think of it as repairing the genetic code of your bibliography.</span></div>  
+				<br /><div class="paragraph"><strong style="color:rgb(42, 42, 42)">Browser integrators: removing problems at the source</strong>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">I use Zotero&rsquo;s connectors for both Chrome and Safari. This is standard, but in the context of the whole pipeline it becomes especially powerful.</span>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">With one click on a journal page:</span><ul style="color:rgb(42, 42, 42)"><li>metadata is imported directly;</li><li>the PDF is downloaded automatically, and into the chosen collection subfolder (e.g., thematic).</li></ul><br /><span style="color:rgb(42, 42, 42)">Because Attanger and the other plugins are configured to run automatically, that single click effectively triggers the entire pipeline:</span>
+				<br /><em style="color:rgb(42, 42, 42)">paper saved &rarr; metadata cleaned &rarr; DOI verified &rarr; PDF renamed &rarr; file moved to correct folder &rarr; synced via Dropbox.</em></div>  
+				<br /><div class="paragraph"><strong style="color:rgb(42, 42, 42)">Zotero Linter: continuous metadata hygiene</strong>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">Even with good imports and DOIs, metadata slowly drifts into inconsistency. Common issues include:</span><ul style="color:rgb(42, 42, 42)"><li>inconsistent capitalization of journal names;</li><li>author names in all caps;</li><li>stray spaces and punctuation;</li><li>malformed dates.</li></ul><br /><span style="color:rgb(42, 42, 42)">The Zotero Linter plugin applies formatting rules across the library and automatically fixes many of these.</span>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">For example:</span>
+				<br /><em style="color:rgb(42, 42, 42)">nature communications</em><span style="color:rgb(42, 42, 42)">&nbsp;becomes&nbsp;</span><em style="color:rgb(42, 42, 42)">Nature Communications</em><br /><em style="color:rgb(42, 42, 42)">SMITH, J.</em><span style="color:rgb(42, 42, 42)">&nbsp;becomes&nbsp;</span><em style="color:rgb(42, 42, 42)">Smith, J.</em><br /><em style="color:rgb(42, 42, 42)">2022-00-00</em><span style="color:rgb(42, 42, 42)">&nbsp;becomes&nbsp;</span><em style="color:rgb(42, 42, 42)">2022</em>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">It also fixes notoriously buggy journal abbreviations.</span></div>  
+				<br /><div class="paragraph">&#8203;<strong style="color:rgb(42, 42, 42)">Zoplicate: controlling duplicates before they spread</strong>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">In any large library, duplicates are inevitable. You save the same paper from different sources. One entry has a DOI; the other doesn&rsquo;t. Left unchecked, duplicates accumulate and slowly pollute the library.</span>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">Zoplicate scans the library for similar entries and groups potential duplicates. You can then merge them intelligently, preserving:</span><ul style="color:rgb(42, 42, 42)"><li>PDFs;</li><li>notes;</li><li>annotations.</li></ul><br /><span style="color:rgb(42, 42, 42)">The result is one clean canonical entry per paper. Zoplicate (</span><a href="https://github.com/ChenglongMa/zoplicate">https://github.com/ChenglongMa/zoplicate</a><span style="color:rgb(42, 42, 42)">) can run 
+				automatically and merge duplicates, e.g., giving precedence to the newer or older version.</span></div>  
+				<br /><div class="paragraph"><strong style="color:rgb(42, 42, 42)">Annotations and multi-device work</strong>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">Because PDFs live directly in Dropbox and Zotero links to them rather than hiding copies, annotation workflows become simple.</span>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">You can:</span><ul style="color:rgb(42, 42, 42)"><li>annotate on your laptop;</li><li>open the same PDF on a tablet;</li><li>continue reading elsewhere.</li></ul>
+				<br /><span style="color:rgb(42, 42, 42)">Changes sync automatically. Zotero always points to the same file. There&rsquo;s no confusion about versions, no duplicated annotated copies.</span></div>  
+				<br /><div class="paragraph"><strong style="color:rgb(42, 42, 42)">Synchronised referencing</strong>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">Keeping your references is one thing; using them is another. Even if your PDFs are stored in your Dropbox, being able to use them efficiently is key. Zotero does &ndash; of course &ndash; provide an integrated reference formatter that connects to your database and lets you cite papers in text processors such as MS Word and, recently, Google Docs. The real power lies in the advanced use of BibTeX files. Two options are particularly amazing.</span>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">First, if you use Overleaf, the best thing you can do is to integrate Zotero with it. In your Overleaf account settings, turn on the Zotero link (in the Reference Managers section). Then, in settings for a specific document, turn on Advanced Reference Search in the Reference Search section. Your Zotero is now in sync with your Overleaf. Every time you type&nbsp;</span><em style="color:rgb(42, 42, 42)">\cite</em><span style="color:rgb(42, 42, 42)">&nbsp;or&nbsp;</span>
+				<em style="color:rgb(42, 42, 42)">\citep</em><span style="color:rgb(42, 42, 42)">&nbsp;&ndash; Overleaf lets you search your entire Zotero library with any prompt (authors, title part, journal name), hinting at the best matching refs. Adding any of them automatically updates your TeX document&rsquo;s BibTeX file.</span>
+				<br />
+				<br /><span style="color:rgb(42, 42, 42)">&#8203;Secondly, with the Better BiBTeX plugin (</span><a href="https://retorque.re/zotero-better-bibtex/">https://retorque.re/zotero-better-bibtex/</a><span style="color:rgb(42, 42, 42)">) you can create dynamically updated reference files that automatically update every time their linked collection in Zotero gets updated. A perfect option for non-Overleaf projects version-controlled via, e.g., GitHub (for example &ndash; if a BibTeX is used in a markdown document).</span></div>  
+				<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center"> <a> <img src="web_files/5-overleaf-linking-zotero-to-pverleaf_orig.png" alt="Picture" style="width:auto;max-width:100%" /> </a> 
+				<div style="display:block;font-size:90%">Overleaf - linking Zotero to Overleaf</div> </div></div>  
+				<div class="wsite-spacer" style="height:50px;"></div>  
+				<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center"> <a> <img src="web_files/4-overleaf-selecting-advanced-referencing-style_orig.png" alt="Picture" style="width:auto;max-width:100%" /> </a> 
+				<div style="display:block;font-size:90%">Overleaf - selecting advanced referencing style</div> </div></div>  
+				<div class="wsite-spacer" style="height:50px;"></div>  
+				<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center"> <a> <img src="web_files/6-overleaf-citation-accessing-personal-library_orig.png" alt="Picture" style="width:auto;max-width:100%" /> </a> 
+				<div style="display:block;font-size:90%">Overleaf - citation accessing personal library</div> </div></div>  
+				<div class="wsite-spacer" style="height:50px;"></div>
+				<br /><a href="https://www.i-deel.org/blog/zotero-magic"> I-DEEL article link </a>
+
+		</div>
+	
+	
+			<div class="blog-social  ">
+		<div class="blog-social-item blog-fb-like"><fb:like href="https://www.i-deel.org/3/post/2026/01/zotero-magic.html" width="90" layout="button_count" action="like" show_faces="false" share="false"></fb:like></div><div class="blog-social-item"><a class="twitter-share-button" href="http://twitter.com/share?url=https://www.i-deel.org/3/post/2026/01/zotero-magic.html" data-text="Zotero magic - I-DEEL: Inter-Disciplinary Ecology and Evolution Lab" data-count="horizontal"></a></div>
+		<div style="clear:both"></div>
+	</div>
+	</div>
+</section>
+
+
+  <!-- FOOTER -->
+  <section data-bs-version="5.1" class="footer3 cid-uJSrOkUoKf">
+    <div class="container">
+      <div class="row">
+        <div class="row-links">
+          <ul class="header-menu">
+            <li class="header-menu-item mbr-fonts-style display-5">
+                <a href="index.html" class="text-white">Home</a>
+              </li><li class="header-menu-item mbr-fonts-style display-5">
+                <a href="people.html" class="text-white">People</a>
+              </li><li class="header-menu-item mbr-fonts-style display-5">
+                <a href="research.html" class="text-white">Research</a>
+              </li><li class="header-menu-item mbr-fonts-style display-5">
+                <a href="publications.html" class="text-white">Publications</a>
+              </li><li class="header-menu-item mbr-fonts-style display-5">
+                <a href="blog.html" class="text-white">Blog</a>
+              </li><li class="header-menu-item mbr-fonts-style display-5">
+                <a href="open-sciences.html" class="text-white">Open Science</a>
+              </li><li class="header-menu-item mbr-fonts-style display-5">
+                <a href="opportunities.html" class="text-white">Opportunities</a>
+              </li><li class="header-menu-item mbr-fonts-style display-5">
+                <a href="links.html" class="text-white">Links</a>
+              </li></ul>
+          </ul>
+        </div>
+        <div class="col-12 mt-4">
+          <p class="mbr-fonts-style copyright display-7">
+            © 2025 COSSEE Lab. Created by <a href="https://www.linkedin.com/in/bhavya-jain-b42618237/" target="_blank" rel="noopener">Bhavya Jain</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="js/1.js"></script>
+  <script src="js/2.js"></script>
+  <script src="js/3.js"></script>
+  <script src="js/4.js"></script>
+  <script src="js/5.js"></script>
+  <script src="js/6.js"></script>
+  <script src="js/7.js"></script>
+  <script src="js/8.js"></script>
+  <script src="js/9.js"></script>
+
+</body>
+</html>
