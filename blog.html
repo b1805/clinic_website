@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-  <title>Blog – COSSEE Lab</title>
+  <title>Blog – Chirayu Clinic</title>
   <link rel="icon" href="web_files/photo-1627704671340-0969d7dba-h_ma49xzt0.jpg" type="image/jpg">
   <link rel="stylesheet" href="css/style1.css" />
   <link rel="stylesheet" href="css/style2.css" />
@@ -16,540 +16,140 @@
   <link rel="preload" href="css/style9.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="css/style10.css"></noscript>
   <link rel="stylesheet" href="css/style11.css" />
-
   <style>
-    .navbar-fixed-top {
-      top: auto;
-    }
-    
-    .navbar.opened {
-        z-index: 1032;
-    }
-    @-webkit-keyframes animationBanner { 0% { opacity: 0; top: -11rem; } 91% { opacity: 0; top: -11rem; } 100% { opacity: 1; top: 0; } }
-    @-moz-keyframes animationBanner { 0% { opacity: 0; top: -11rem; } 91% { opacity: 0; top: -11rem; } 100% { opacity: 1; top: 0; } }
-    @-o-keyframes animationBanner { 0% { opacity: 0; top: -11rem; } 91% { opacity: 0; top: -11rem; } 100% { opacity: 1; top: 0; } }
-       @keyframes animationBanner { 0% { opacity: 0; top: -11rem; } 91% { opacity: 0; top: -11rem; } 100% { opacity: 1; top: 0; } }
-    @-webkit-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 11rem; } }
-    @-moz-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 11rem; } }
-    @-o-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 11rem; } }
-       @keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 11rem; } }
-    
-    @-webkit-keyframes animationClosing { 0% { height: 11rem; opacity: 1; } 30% { height: 11rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
-    @-moz-keyframes animationClosing { 0% { height: 11rem; opacity: 1; } 30% { height: 11rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
-    @-o-keyframes animationClosing { 0% { height: 11rem; opacity: 1; } 30% { height: 11rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
-    @keyframes animationClosing { 0% { height: 11rem; opacity: 1; } 30% { height: 11rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
-    
-    @media(max-width: 575px) {
-    
-      @-webkit-keyframes animationBanner { 0% { opacity: 0; top: -14rem; } 91% { opacity: 0; top: -14rem; } 100% { opacity: 1; top: 0; } }
-      @-moz-keyframes animationBanner { 0% { opacity: 0; top: -14rem; } 91% { opacity: 0; top: -14rem; } 100% { opacity: 1; top: 0; } }
-      @-o-keyframes animationBanner { 0% { opacity: 0; top: -14rem; } 91% { opacity: 0; top: -14rem; } 100% { opacity: 1; top: 0; } }
-        @keyframes animationBanner { 0% { opacity: 0; top: -14rem; } 91% { opacity: 0; top: -14rem; } 100% { opacity: 1; top: 0; } }
-      @-webkit-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 14rem; } }
-      @-moz-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 14rem; } }
-      @-o-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 14rem; } }
-        @keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 14rem; } }
-    
-      @-webkit-keyframes animationClosing { 0% { height: 14rem; opacity: 1; } 30% { height: 14rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
-      @-moz-keyframes animationClosing { 0% { height: 14rem; opacity: 1; } 30% { height: 14rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
-      @-o-keyframes animationClosing { 0% { height: 14rem; opacity: 1; } 30% { height: 14rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
-      @keyframes animationClosing { 0% { height: 14rem; opacity: 1; } 30% { height: 14rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
-    }
-    .tab-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 7rem 1rem 4rem;
-    }
-    .tabs {
-      display: flex;
-      flex-wrap: wrap;
-      border-bottom: 2px solid #ccc;
-      justify-content: center;
-    }
-    .tab-button {
-      padding: 1rem;
-      cursor: pointer;
-      border: none;
-      background: none;
-      font-size: 1rem;
-    }
-    .tab-button.active {
-      border-bottom: 3px solid #333;
-      font-weight: bold;
-    }
-    .tab-content {
-      display: none;
-      padding: 2rem 0;
-      text-align: center;
-    }
-    .tab-content.active {
-      display: block;
-    }
-    .person-card img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-    .person-card h4 {
-      margin-top: 1rem;
-      margin-bottom: 0.25rem;
-    }
-    .person-card p {
-      font-style: italic;
-      margin: 0;
-    }
-    .page-section {
-      padding: 7rem 1rem 4rem;
-    }
-    .content-col {
-      padding: 1rem;
-    }
-    .content-col h3 {
-      margin-top: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    .content-col ul {
-      padding-left: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .content-col img {
-      max-width: 100%;
-      margin: 1rem 0;
-    }
-    .content-col img {
-        display: inline-block;
-        margin: 1rem auto;
-        height: auto; /* let height be flexible unless specified */
-        width: auto;  /* let width be flexible unless specified */
-        max-width: 100%; /* still responsive */
-    }
+    .navbar-fixed-top { top: auto; }
+    .page-section { padding: 7rem 1rem 4rem; }
   </style>
 </head>
 <body>
-    <!-- NAV BAR -->
-
-    <section
-      data-bs-version="5.1"
-      class="menu menu2 cid-uJSrOkOEyE"
-      once="menu"
-      id="menu-5-uJSrOkOEyE"
-    >
-      <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
-        <div class="container">
-          <div class="navbar-brand">
-            <span class="navbar-logo">
-              <a href="index.html">
-                <img
-                  src="web_files/photo-1732881112067-aa3e9ece2-h_ma49wziz.jpg"
-                  alt=""
-                  style="height: 4.3rem"
-                />
-              </a>
-            </span>
-            <span class="navbar-caption-wrap">
-              <a
-                class="navbar-caption text-black display-4"
-                href="index.html"
-                autocomplete="off"
-              >
-                Home
-              </a>
-            </span>
-          </div>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-bs-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <div class="hamburger">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-              <li class="nav-item">
-                <a
-                  class="nav-link link text-black display-4"
-                  href="people.html"
-                >
-                  People
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link link text-black display-4"
-                  href="research.html"
-                  aria-expanded="false"
-                >
-                  Research
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link link text-black display-4"
-                  href="publications.html"
-                  aria-expanded="false"
-                  autocomplete="off"
-                >
-                  Publications
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link link text-black display-4" href="blog.html">
-                  Blog
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle text-black display-4"
-                  href="#"
-                  id="openScienceDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Open Science
-                </a>
-                <div class="dropdown-menu" aria-labelledby="openScienceDropdown">
-                  <a class="dropdown-item" href="registrations.html">Registrations</a>
-                  <a class="dropdown-item" href="registered-reports.html">Registered Reports</a>
-                  <a class="dropdown-item" href="published-protocols.html">Published Protocols</a>
-                  <a class="dropdown-item" href="EDI.html">Equity, Diversity and Inclusion</a>
-                  <a class="dropdown-item" href="others.html">Others</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link link text-black display-4"
-                  href="opportunities.html"
-                  autocomplete="off"
-                >
-                  Opportunities
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link link text-black display-4"
-                  href="links.html"
-                  autocomplete="off"
-                >
-                  Links
-                </a>
-              </li>
-            </ul>
-
-            <div class="navbar-buttons mbr-section-btn">
-              <a
-                class="btn btn-primary display-4 glow-animation"
-                href="contact.html"
-                autocomplete="off"
-              >
-                Contact Us
-              </a>
-            </div>
-          </div>
+  <section data-bs-version="5.1" class="menu menu2 cid-uJSrOkOEyE" once="menu">
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+      <div class="container">
+        <div class="navbar-brand">
+          <span class="navbar-logo"><a href="index.html"><img src="web_files/photo-1732881112067-aa3e9ece2-h_ma49wziz.jpg" alt="" style="height: 4.3rem" /></a></span>
+          <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-4" href="index.html">Chirayu Clinic</a></span>
         </div>
-      </nav>
-    </section>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-label="Toggle navigation">
+          <div class="hamburger"><span></span><span></span><span></span><span></span></div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav nav-dropdown">
+            <li class="nav-item"><a class="nav-link link text-black display-4" href="research.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link link text-black display-4" href="people.html">Our Team</a></li>
+            <li class="nav-item"><a class="nav-link link text-black display-4" href="publications.html">Testimonials</a></li>
+            <li class="nav-item"><a class="nav-link link text-black display-4" href="blog.html">Blog</a></li>
+          </ul>
+          <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="contact.html">Contact Us</a></div>
+        </div>
+      </div>
+    </nav>
+  </section>
 
-  <!-- PAGE CONTENT -->
   <section class="page-section">
-  <div class="container">
-    <div class="row justify-content-center mb-5">
-      <div class="col-12 content-head">
-        <div class="mbr-section-head">
-          <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-            <strong>Blog</strong>
-          </h4>
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-12 content-head">
+          <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Health Tips &amp; Clinic News</strong></h4>
         </div>
+      </div>
+      <div class="row justify-content-center">
+
+        <div class="col-12 col-sm-6 col-lg-3 mb-4">
+          <div class="item-wrapper text-center mx-2">
+            <div class="item-img mb-3">
+              <img src="web_files/blog-joint-replacement.jpg" alt="" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
+            </div>
+            <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7"><strong>Hip &amp; Knee Joint Replacement at Chirayu Clinic</strong></h5>
+            <p class="mbr-text mbr-fonts-style mb-1 display-8">March 2026</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-8">Dr. Anish Jain</p>
+            <a href="hip-and-knee-joint-replacement.html" class="btn item-btn btn-primary display-7">Read</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 mb-4">
+          <div class="item-wrapper text-center mx-2">
+            <div class="item-img mb-3">
+              <img src="web_files/blog-fracture-humerus.jpg" alt="" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
+            </div>
+            <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7"><strong>Expert Fracture Care: Humerus Surgery</strong></h5>
+            <p class="mbr-text mbr-fonts-style mb-1 display-8">February 2026</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-8">Dr. Anish Jain</p>
+            <a href="understanding-fracture-treatment.html" class="btn item-btn btn-primary display-7">Read</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 mb-4">
+          <div class="item-wrapper text-center mx-2">
+            <div class="item-img mb-3">
+              <img src="web_files/blog-ent-endoscopy.jpg" alt="" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
+            </div>
+            <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7"><strong>ENT Consultation &amp; Endoscopy</strong></h5>
+            <p class="mbr-text mbr-fonts-style mb-1 display-8">February 2026</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-8">Dr. Rashmi Jain</p>
+            <a href="ent-consultation-at-chirayu.html" class="btn item-btn btn-primary display-7">Read</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 mb-4">
+          <div class="item-wrapper text-center mx-2">
+            <div class="item-img mb-3">
+              <img src="web_files/blog-emergency-care.jpg" alt="" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
+            </div>
+            <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7"><strong>Accident &amp; Emergency Orthopedic Care</strong></h5>
+            <p class="mbr-text mbr-fonts-style mb-1 display-8">January 2026</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-8">Dr. Anish Jain</p>
+            <a href="emergency-orthopedic-care-indore.html" class="btn item-btn btn-primary display-7">Read</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 mb-4">
+          <div class="item-wrapper text-center mx-2">
+            <div class="item-img mb-3">
+              <img src="web_files/blog-clinic-facilities.jpg" alt="" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
+            </div>
+            <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7"><strong>Facilities at Chirayu Clinic</strong></h5>
+            <p class="mbr-text mbr-fonts-style mb-1 display-8">January 2026</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-8">Chirayu Clinic Team</p>
+            <a href="facilities-at-chirayu-clinic.html" class="btn item-btn btn-primary display-7">Read</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 mb-4">
+          <div class="item-wrapper text-center mx-2">
+            <div class="item-img mb-3">
+              <img src="web_files/blog-family-care.jpg" alt="" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
+            </div>
+            <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7"><strong>Orthopedic &amp; ENT Care for the Whole Family</strong></h5>
+            <p class="mbr-text mbr-fonts-style mb-1 display-8">December 2025</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-8">Chirayu Clinic Team</p>
+            <a href="orthopedic-care-for-the-family.html" class="btn item-btn btn-primary display-7">Read</a>
+          </div>
+        </div>
+
       </div>
     </div>
+  </section>
 
-    <div class="row justify-content-center">
-
-	  <!-- Blog Post -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="item-wrapper text-center mx-2">
-          <div class="item-img mb-3">
-            <img src="web_files/Gemini_Generated_Image_bu64d8bu64d8bu64 - Eduardo Santos.png" alt="Visit" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
-          </div>
-          <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7">
-            <strong>The Elephant in the Graduate School Room: Why does the relationship with your advisor fail? (And how to fix it)</strong>
-          </h5>
-          <p class="mbr-text mbr-fonts-style mb-1 display-8">February 23, 2026</p>
-          <p class="mbr-text mbr-fonts-style mb-3 display-8">Eduardo Santos</p>
-          <a href="the-elephant-in-the-graduate-school.html" class="btn item-btn btn-primary display-7" target="_blank">Read</a>
-        </div>
-      </div>
-	  
-	  <!-- Blog Post -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="item-wrapper text-center mx-2">
-          <div class="item-img mb-3">
-            <img src="web_files/1-zotero-basefolder-settings_orig.png" alt="Visit" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
-          </div>
-          <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7">
-            <strong>Zotero magic</strong>
-          </h5>
-          <p class="mbr-text mbr-fonts-style mb-1 display-8">January 31, 2026</p>
-          <p class="mbr-text mbr-fonts-style mb-3 display-8">Szymek Drobinak</p>
-          <a href="zotero-magic.html" class="btn item-btn btn-primary display-7" target="_blank">Read</a>
-        </div>
-      </div>
-	  
-	  <!-- Blog Post -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="item-wrapper text-center mx-2">
-          <div class="item-img mb-3">
-            <img src="web_files/picture-1.jpg" alt="Visit" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
-          </div>
-          <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7">
-            <strong>Reflecting on a Year of Change: COSSEE’s First Year (2025)</strong>
-          </h5>
-          <p class="mbr-text mbr-fonts-style mb-1 display-8">December 29, 2025</p>
-          <p class="mbr-text mbr-fonts-style mb-3 display-8">Shinichi Nakagawa</p>
-          <a href="reflecting-on-a-year-of-change.html" class="btn item-btn btn-primary display-7" target="_blank">Read</a>
-        </div>
-      </div>
-	  
-	  <!-- Blog Post -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="item-wrapper text-center mx-2">
-          <div class="item-img mb-3">
-            <img src="web_files/img-7377_orig.jpg" alt="Visit" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
-          </div>
-          <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7">
-            <strong>The spooky season in science</strong>
-          </h5>
-          <p class="mbr-text mbr-fonts-style mb-1 display-8">November 30, 2025</p>
-          <p class="mbr-text mbr-fonts-style mb-3 display-8">Losia Lagisz</p>
-          <a href="the-spooky-season-in-science.html" class="btn item-btn btn-primary display-7" target="_blank">Read</a>
-        </div>
-      </div>
-	  
-	  <!-- Blog Post -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="item-wrapper text-center mx-2">
-          <div class="item-img mb-3">
-            <img src="web_files/c3.jpg" alt="Visit" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
-          </div>
-          <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7">
-            <strong>A visit to Canada</strong>
-          </h5>
-          <p class="mbr-text mbr-fonts-style mb-1 display-8">October 27, 2025</p>
-          <p class="mbr-text mbr-fonts-style mb-3 display-8">Coralie Williams</p>
-          <a href="a-visit-to-canada.html" class="btn item-btn btn-primary display-7" target="_blank">Read</a>
-        </div>
-      </div>
-
-      <!-- Blog Post -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="item-wrapper text-center mx-2">
-          <div class="item-img mb-3">
-            <img src="web_files/yy-blog.png" alt="Oilers" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
-          </div>
-          <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7">
-            <strong>Back to the root of meta-analysis: understanding sampling variance</strong>
-          </h5>
-          <p class="mbr-text mbr-fonts-style mb-1 display-8">September 30, 2025</p>
-          <p class="mbr-text mbr-fonts-style mb-3 display-8">Yefeng Yang</p>
-          <a href="back-to-the-root.html" class="btn item-btn btn-primary display-7" target="_blank">Read</a>
-        </div>
-      </div>
-	  
-	  <!-- Blog Post -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="item-wrapper text-center mx-2">
-          <div class="item-img mb-3">
-            <img src="web_files/setac-picture-1_orig.jpg" alt="Oilers" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
-          </div>
-          <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7">
-            <strong>Reflections on our time at SETAC AU 2025</strong>
-          </h5>
-          <p class="mbr-text mbr-fonts-style mb-1 display-8">August 31, 2025</p>
-          <p class="mbr-text mbr-fonts-style mb-3 display-8">Kyle Morrison</p>
-          <a href="Reflections-on-our-time-at-SETAC-AU-2025.html" class="btn item-btn btn-primary display-7" target="_blank">Read</a>
-        </div>
-      </div>
-
-      <!-- Blog Post -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="item-wrapper text-center mx-2">
-          <div class="item-img mb-3">
-            <img src="web_files/picture2.jpg" alt="Oilers" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
-          </div>
-          <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7">
-            <strong>Five weeks across western Canada</strong>
-          </h5>
-          <p class="mbr-text mbr-fonts-style mb-1 display-8">July 31, 2025</p>
-          <p class="mbr-text mbr-fonts-style mb-3 display-8">Lorenzo Ricolfi</p>
-          <a href="Five-weeks-across-western-Canada.html" class="btn item-btn btn-primary display-7" target="_blank">Read</a>
-        </div>
-      </div>
-	  
-      <!-- Blog Post -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="item-wrapper text-center mx-2">
-          <div class="item-img mb-3">
-            <img src="web_files/metadata_orig.png" alt="Oilers" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
-          </div>
-          <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7">
-            <strong>Around meta-analysis (16): meta-data, metadata, and more meta confusion</strong>
-          </h5>
-          <p class="mbr-text mbr-fonts-style mb-1 display-8">June 28, 2025</p>
-          <p class="mbr-text mbr-fonts-style mb-3 display-8">Malgorzata (Losia) Lagisz</p>
-          <a href="Around-meta-analysis.html" class="btn item-btn btn-primary display-7" target="_blank">Read</a>
-        </div>
-      </div>
-	  
-      <!-- Blog Post -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="item-wrapper text-center mx-2">
-          <div class="item-img mb-3">
-            <img src="web_files/tangle.jpg" alt="Oilers" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
-          </div>
-          <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7">
-            <strong>Meta-analysis terminology can be confusing</strong>
-          </h5>
-          <p class="mbr-text mbr-fonts-style mb-1 display-8">May 17, 2025</p>
-          <p class="mbr-text mbr-fonts-style mb-3 display-8">Coralie Williams</p>
-          <a href="Meta-analysis-terminology-can-be-confusing.html" class="btn item-btn btn-primary display-7" target="_blank">Read</a>
-        </div>
-      </div>
-
-      <!-- Blog Post -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="item-wrapper text-center mx-2">
-          <div class="item-img mb-3">
-            <img src="web_files/img-9988.jpg" alt="Oilers" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
-          </div>
-          <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7">
-            <strong>A True Canadian Experience: Let’s Go Oilers!</strong>
-          </h5>
-          <p class="mbr-text mbr-fonts-style mb-1 display-8">April 16, 2025</p>
-          <p class="mbr-text mbr-fonts-style mb-3 display-8">Shinichi Nakagawa</p>
-          <a href="a-true-canadian-experience-lets-go-oilers.html" class="btn item-btn btn-primary display-7" target="_blank">Read</a>
-        </div>
-      </div>
-
-      <!-- Blog Post -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="item-wrapper text-center mx-2">
-          <div class="item-img mb-3">
-            <img src="web_files/IMG_5590.JPG" alt="Skiing" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;" />
-          </div>
-          <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7">
-            <strong>Cross-country skiing<br> <br></strong>
-          </h5>
-          <p class="mbr-text mbr-fonts-style mb-1 display-8">April 2, 2025</p>
-          <p class="mbr-text mbr-fonts-style mb-3 display-8">Ayumi Mizuno</p>
-          <a href="cross-country-skiing.html" class="btn item-btn btn-primary display-7" target="_blank">Read</a>
-        </div>
-      </div>
-
-      <!-- Blog Post -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="item-wrapper text-center mx-2">
-          <div class="item-img mb-3">
-            <img src="web_files/img-5663.jpg" alt="Mardi Gras" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;"/>
-          </div>
-          <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7">
-            <strong>Mardi Gras Parade 2025<br> <br></strong>
-          </h5>
-          <p class="mbr-text mbr-fonts-style mb-1 display-8">March 1, 2025</p>
-          <p class="mbr-text mbr-fonts-style mb-3 display-8">Malgorzata (Losia) Lagisz</p>
-          <a href="mardi-gras-parade-2025.html" class="btn item-btn btn-primary display-7" target="_blank">Read</a>
-        </div>
-      </div>
-
-      <!-- Blog Post -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="item-wrapper text-center mx-2">
-          <div class="item-img mb-3">
-            <img src="web_files/blog-yy_orig.png" alt="Meta-analysis" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;"/>
-          </div>
-          <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7">
-            <strong>Model Checking in Meta-Analysis</strong>
-          </h5>
-          <p class="mbr-text mbr-fonts-style mb-1 display-8">January 31, 2025</p>
-          <p class="mbr-text mbr-fonts-style mb-3 display-8">Yefeng Yang</p>
-          <a href="model-checking-in-meta-analysis.html" class="btn item-btn btn-primary display-7" target="_blank">Read</a>
-        </div>
-      </div>
-
-      <!-- Blog Post -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="item-wrapper text-center mx-2">
-          <div class="item-img mb-3">
-            <img src="web_files/img-9234.jpg" alt="Year Review" class="img-fluid rounded" style="height: 200px; object-fit: cover; width: 100%;"/>
-          </div>
-          <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-7">
-            <strong>Reflecting on a Year of Change: I-deel in 2024</strong>
-          </h5>
-          <p class="mbr-text mbr-fonts-style mb-1 display-8">December 30, 2024</p>
-          <p class="mbr-text mbr-fonts-style mb-3 display-8">Shinichi Nakagawa</p>
-          <a href="reflecting-on-a-year-of-change-i-deel-in-2024.html" class="btn item-btn btn-primary display-7" target="_blank">Read</a>
-        </div>
-      </div>
-
-      <!-- Add more blog posts here -->
-    </div>
-  </div>
-</section>
-
-  <!-- FOOTER -->
   <section data-bs-version="5.1" class="footer3 cid-uJSrOkUoKf">
     <div class="container">
       <div class="row">
         <div class="row-links">
           <ul class="header-menu">
-            <li class="header-menu-item mbr-fonts-style display-5">
-                <a href="index.html" class="text-white">Home</a>
-              </li><li class="header-menu-item mbr-fonts-style display-5">
-                <a href="people.html" class="text-white">People</a>
-              </li><li class="header-menu-item mbr-fonts-style display-5">
-                <a href="research.html" class="text-white">Research</a>
-              </li><li class="header-menu-item mbr-fonts-style display-5">
-                <a href="publications.html" class="text-white">Publications</a>
-              </li><li class="header-menu-item mbr-fonts-style display-5">
-                <a href="blog.html" class="text-white">Blog</a>
-              </li><li class="header-menu-item mbr-fonts-style display-5">
-                <a href="open-sciences.html" class="text-white">Open Science</a>
-              </li><li class="header-menu-item mbr-fonts-style display-5">
-                <a href="opportunities.html" class="text-white">Opportunities</a>
-              </li><li class="header-menu-item mbr-fonts-style display-5">
-                <a href="links.html" class="text-white">Links</a>
-              </li></ul>
+            <li class="header-menu-item mbr-fonts-style display-5"><a href="index.html" class="text-white">Home</a></li>
+            <li class="header-menu-item mbr-fonts-style display-5"><a href="research.html" class="text-white">Services</a></li>
+            <li class="header-menu-item mbr-fonts-style display-5"><a href="people.html" class="text-white">Our Team</a></li>
+            <li class="header-menu-item mbr-fonts-style display-5"><a href="blog.html" class="text-white">Blog</a></li>
+            <li class="header-menu-item mbr-fonts-style display-5"><a href="contact.html" class="text-white">Contact</a></li>
           </ul>
         </div>
         <div class="col-12 mt-4">
-          <p class="mbr-fonts-style copyright display-7">
-            © 2025 COSSEE Lab. Created by <a href="https://www.linkedin.com/in/bhavya-jain-b42618237/" target="_blank" rel="noopener">Bhavya Jain</a>.
-          </p>
+          <p class="mbr-fonts-style copyright display-7">© 2026 Chirayu Clinic. Created by <a href="https://www.linkedin.com/in/bhavya-jain-b42618237/" target="_blank" rel="noopener">Bhavya Jain</a>.</p>
         </div>
       </div>
     </div>
   </section>
-  <script src="js/1.js"></script>
-  <script src="js/2.js"></script>
-  <script src="js/3.js"></script>
-  <script src="js/4.js"></script>
-  <script src="js/5.js"></script>
-  <script src="js/6.js"></script>
-  <script src="js/7.js"></script>
-  <script src="js/8.js"></script>
-  <script src="js/9.js"></script>
-
+  <script src="js/1.js"></script><script src="js/2.js"></script><script src="js/3.js"></script>
+  <script src="js/4.js"></script><script src="js/5.js"></script><script src="js/6.js"></script>
+  <script src="js/7.js"></script><script src="js/8.js"></script><script src="js/9.js"></script>
 </body>
 </html>
