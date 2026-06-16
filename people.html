@@ -16,7 +16,7 @@
   <link rel="preload" href="css/style9.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="css/style10.css"></noscript>
   <link rel="stylesheet" href="css/style11.css" />
-  <link rel="stylesheet" href="css/style12.css" type="text/css">
+  <link rel="stylesheet" href="css/clinic-pro.css" />
 
   <style>
     .navbar-fixed-top { top: auto; }
@@ -48,38 +48,6 @@
       justify-content: center;
       gap: 0.5rem;
       align-items: center;
-    }
-    .filter-button {
-      padding: 0.4rem 1rem;
-      background: #eee;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .filter-button.active {
-      background-color: #0077cc;
-      color: white;
-    }
-    .member-button {
-      padding: 0.4rem 1rem;
-      border: 1px solid purple;
-      border-radius: 5px;
-      cursor: pointer;
-      background-color: #f9f9f9;
-    }
-    .member-button:hover {
-      background-color: #e0e0e0;
-    }
-    .line-separator {
-      height: 1px;
-      background-color: #ff9900;
-      margin: 10px 0;
-      width: 100%;
-    }
-    .profile-photo {
-      width: 220px;
-      max-width: 100%;
-      border-radius: 8px;
     }
   </style>
 </head>
@@ -147,6 +115,7 @@
       <div class="tab-content active" id="anish" data-specialty="Orthopedics" data-shift="morning evening">
         <h2 style="text-align:left; color:#3f3f3f;">Dr. Anish Jain</h2>
         <p style="color:#666; font-style:italic;">Orthopedic Surgeon · Fracture, Bone &amp; Joint Specialist</p>
+        <div class="doctor-profile">
         <table style="width:100%; border:none;">
           <tr>
             <td style="width:28%; vertical-align:top; padding-right:1rem;">
@@ -173,11 +142,13 @@
             </td>
           </tr>
         </table>
+        </div>
       </div>
 
       <div class="tab-content" id="rashmi" data-specialty="ENT" data-shift="morning evening">
         <h2 style="text-align:left; color:#3f3f3f;">Dr. Rashmi Jain</h2>
         <p style="color:#666; font-style:italic;">ENT Surgeon · Ear, Nose &amp; Throat Specialist</p>
+        <div class="doctor-profile">
         <table style="width:100%; border:none;">
           <tr>
             <td style="width:28%; vertical-align:top; padding-right:1rem;">
@@ -204,6 +175,7 @@
             </td>
           </tr>
         </table>
+        </div>
       </div>
     </div>
 
@@ -238,11 +210,9 @@
         button.style.display = visible ? 'inline-block' : 'none';
 
         if (member.id === activeTabId && visible) {
-          button.style.backgroundColor = 'purple';
-          button.style.color = 'white';
+          button.classList.add('active');
         } else {
-          button.style.backgroundColor = '';
-          button.style.color = '';
+          button.classList.remove('active');
         }
       });
 
@@ -314,5 +284,6 @@
   <script src="js/7.js"></script>
   <script src="js/8.js"></script>
   <script src="js/9.js"></script>
+  <script src="js/clinic.js"></script>
 </body>
 </html>
